@@ -1,0 +1,135 @@
+# Root .gitignore (repo-wide)
+# Existing per-project .gitignore files remain; this aggregates global rules.
+
+#############################
+# GitHub Copilot artifacts  #
+#############################
+.copilot/
+.vscode/copilot*.*
+*.copilot.*
+*._copilot_*
+# Generic prefixed config dumps
+copilot*.json
+copilot*.yml
+copilot*.yaml
+copilot*.toml
+
+################################
+# Azure Functions local config #
+################################
+# Never commit local dev settings with secrets
+local.settings.json
+**/local.settings.json
+appsettings.Development.json
+appsettings.Local.json
+*.secrets.json
+.env
+*.env
+
+################################
+# Key Vault / secret exports   #
+################################
+keyvault-secrets*.json
+secrets-export*.json
+
+#############################
+# Build / output directories #
+#############################
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+logs/
+artifacts/
+
+#############################
+# User / IDE specific        #
+#############################
+.vs/
+.idea/
+*.sln.iml
+.vscode/
+# (Optional) allow shared VSCode settings; comment previous line if desired
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.DotSettings.user
+*.cr/
+
+#############################
+# OS generated               #
+#############################
+.DS_Store
+Thumbs.db
+$RECYCLE.BIN/
+
+#############################
+# Package managers / tools   #
+#############################
+node_modules/
+packages/
+!packages/build/
+.paket/paket.exe
+paket-files/
+
+#############################
+# Test / coverage            #
+#############################
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+coverage/
+coverage*.json
+*.coverage
+*.coveragexml
+
+#############################
+# Generated / cache          #
+#############################
+*.cache
+*.[Cc]ache
+!*.cache/
+*.generated.cs
+Generated/
+
+################################
+# Azure / Emulators           #
+################################
+# Azurite local data files
+__azurite_db*__.json
+__azurite_db*__.log
+azurite_workspace/
+# Durable Functions local storage state (if appears)
+durablefunctions-localhost.storage
+# Emulator config
+emulatorsettings.json
+
+################################
+# Security / certificates     #
+################################
+*.pfx
+*.p12
+*.cer
+*.snk
+*.key
+*.der
+*.pem
+
+################################
+# Publish / deployment        #
+################################
+*.publishsettings
+*.pubxml
+*.pubxml.user
+PublishScripts/
+
+################################
+# Misc legacy / unused        #
+################################
+*.bak
+*.tmp
+~$*
+*~
+
+# Keep placeholder for Copilot dir if needed
+!.copilot/.gitkeep
